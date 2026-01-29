@@ -6,6 +6,7 @@ require("dotenv").config();
 // =======================
 // Imports
 // =======================
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -13,6 +14,8 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
 // Routes
+const userRoutes = require("./routes/userRoutes");
+
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const todoRoutes = require("./routes/todoRoutes");
@@ -25,6 +28,8 @@ const app = express();
 // =======================
 // Security Middlewares
 // =======================
+app.use("/api/users", userRoutes);
+
 app.use(
   cors({
     origin: "http://localhost:5173", // frontend dev URL

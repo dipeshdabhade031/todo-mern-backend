@@ -19,6 +19,12 @@ const userSchema = new mongoose.Schema(
       type: String,
       enum: ["user", "admin"],
       default: "user"
+    },
+
+    // ✅ ADD THIS FIELD (NEW)
+    profileImage: {
+      type: String,
+      default: ""
     }
   },
   { timestamps: true }
