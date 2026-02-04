@@ -33,7 +33,7 @@ router.post("/signup", async (req, res) => {
 });
 
 // Login
-outer.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     console.log("LOGIN ROUTE HIT");
     console.log("BODY:", req.body);
